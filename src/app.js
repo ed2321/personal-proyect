@@ -3,7 +3,7 @@
 require('dotenv').config();
 const express = require('express');
 const logger = require('@condor-labs/logger');
-const apiRestRoutes  = require('./routes/routes.js');
+const apiRestRoutes = require('./routes/routes.js');
 const { NODE_ENV, HOST, PORT } = process.env;
 const app = express();
 
@@ -38,4 +38,4 @@ app.use('', apiRestRoutes);
 app.listen(PORT, HOST);
 logger.log(`Running ${NODE_ENV} environment on http://${HOST}:${PORT}`);
 
-module.exports = app
+module.exports = app;

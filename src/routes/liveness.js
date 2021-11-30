@@ -5,5 +5,4 @@ const api = express.Router();
 
 api.get('/', liveness.getStatus);
 
-
 module.exports = api;

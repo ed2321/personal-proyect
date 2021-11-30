@@ -9,12 +9,12 @@ const schemaDefinition = {
   password: { type: String },
 };
 
-let schema = new mongodb.mongoose.Schema(schemaDefinition, {
+const schema = new mongodb.mongoose.Schema(schemaDefinition, {
   timestamps: {
     createdAt: 'createdDate',
     updatedAt: 'updatedDate',
   },
 });
-let userModel = dbConnection.model('User', schema);
+const userModel = dbConnection.model('User', schema);
 
 module.exports = userModel;

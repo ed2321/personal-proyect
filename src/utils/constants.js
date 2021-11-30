@@ -42,10 +42,10 @@ const UNIT = {
   MILISECONDS: 'ms',
   CELSIUS: '°C',
 };
-module.exports =  {
+module.exports = {
   MONGO_DB_SETTINGS,
   HEALTH_STATUS,
   APPLICATION_NAME,
   COMPONENT_TYPE,
-  UNIT
+  UNIT,
 };
