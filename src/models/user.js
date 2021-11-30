@@ -1,6 +1,6 @@
 const mongodb = require('@condor-labs/mongodb')();
-import { clients } from '../helpers/mongodb';
-import { CONNECTION_NAMES } from '../utils/constants';
+const { clients } = require('../helpers/mongodb');
+const { CONNECTION_NAMES } = require('../utils/constants');
 const dbConnection = clients[CONNECTION_NAMES.DEFAULT_DB];
 
 const schemaDefinition = {

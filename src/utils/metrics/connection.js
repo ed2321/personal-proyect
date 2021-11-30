@@ -1,6 +1,6 @@
-import metrics from '@condor-labs/metrics';
-import { hostname } from 'os';
-import { APPLICATION_NAME } from '../constants';
+const metrics = require('@condor-labs/metrics');
+const { hostname } = require('os');
+const { APPLICATION_NAME } = require('../constants');
 
 const { STATSD_HOST, STATSD_PORT, STATSD_JOB, STATSD_INSTANCE } = process.env;
 
@@ -17,4 +17,4 @@ const connect = () => {
   metrics.connect(settings);
 };
 
-export default connect;
+module.exports = connect;

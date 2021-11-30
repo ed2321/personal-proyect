@@ -1,6 +1,6 @@
-import systemInformation from 'systeminformation';
-import { hostname } from 'os';
-import { APPLICATION_NAME, MAX_LATENCY, HEALTH_STATUS, COMPONENT_TYPE, UNIT } from './constants';
+const systemInformation = require('systeminformation');
+const { hostname } = require('os');
+const { APPLICATION_NAME, MAX_LATENCY, HEALTH_STATUS, COMPONENT_TYPE, UNIT } = require('./constants');
 const { STATSD_INSTANCE } = process.env;
 
 async function checkNewtork() {
@@ -129,4 +129,4 @@ Monitor.prototype.getStats = async function () {
   return { status: globalStatus, ...this.stats };
 };
 
-export default Monitor;
+module.exports = Monitor;

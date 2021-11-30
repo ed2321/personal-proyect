@@ -1,8 +1,8 @@
-import metricsHandler from '@condor-labs/metrics';
-import metricsMiddleware from '@condor-labs/metrics/src/middleware/express';
+const metricsHandler = require('@condor-labs/metrics');
+const metricsMiddleware = require('@condor-labs/metrics/src/middleware/express');
+const connect = require('./connection');
+const metrics = metricsHandler;
+const incrementMetrics = (stat, tags) => metricsHandler.increment(stat, tags);
+const requestMiddleware = metricsMiddleware.requestMiddleware(metricsHandler);
 
-export { default as connect } from './connection';
-export const metrics = metricsHandler;
-export const incrementMetrics = (stat, tags) => metricsHandler.increment(stat, tags);
-export const requestMiddleware = metricsMiddleware.requestMiddleware(metricsHandler);
-export const errorMiddleware = metricsMiddleware.errorMiddleware(metricsHandler);
+module.exports = { connect, metrics, incrementMetrics, requestMiddleware };

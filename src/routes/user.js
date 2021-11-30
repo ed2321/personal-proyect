@@ -1,6 +1,6 @@
 const express = require('express');
-// import userController from '../controllers/userController';
-// import isAuthenticated from '../middlewares/auth';
+// const userController = require('../controllers/userController');
+// const isAuthenticated = require('../middlewares/auth');
 
 const api = express.Router();
 // api.use(isAuthenticated);
