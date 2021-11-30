@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 defaults:
   run:
@@ -27,12 +27,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Installing dependencies test
+      - name: Installing dependencies
         run: |
-          npm i
-      - name: Install dependencies challenge
-        run: |
-          cd test
           npm i
       - name: Running tests
         run: npm test
