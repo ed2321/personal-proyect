@@ -1,20 +1,23 @@
 const { hostname } = require('os');
-const { mongodbHelper } = require('../helpers/mongodb');
+// const mongoHelper = require('../helpers/mongodb');
+const logger = require('@condor-labs/logger');
+// const { MONGO_DB_SETTINGS } = require('../utils/constants');
 
 const getStatus = async (_req, res) => {
   try {
-    // console.log(mongodbHelper.isConnected('engine_v2'));
-    const mongodbStatus =
-      mongodbHelper.isConnected.readyState === 1 ? 'Mongo connection was success' : 'Could not connect to the service';
-
+    // mongoHelper.connect().then(async () => {
+    //   const mongo = mongoHelper.clients;
+    //   console.log(mongo)
+    // });
     return res.send({
       services: {
         'personal-project-api': `Personal api service is still running`,
-        mongo: mongodbStatus,
+        mongo: 'mongo',
       },
       hostname: hostname(),
     });
   } catch (error) {
+    logger.error(error);
     return res.status(503).send({ error: error.message });
   }
 };
