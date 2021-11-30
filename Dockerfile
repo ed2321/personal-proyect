@@ -18,8 +18,7 @@ RUN npm install
 ADD ./ $HOME/app/
 
 #Expose port and start application
-EXPOSE 8080
+EXPOSE 4000
 
 #Start APP with PM2, reference: http://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs
 CMD ["pm2-runtime", "app.js"]
-#CMD ["pm2-runtime", "start", "pm2.docker.process.yml"]
