@@ -14,6 +14,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "dotenv": "^10.0.0",
+    "@condor-labs/logger": "^1.1.0",
+    "@condor-labs/metrics": "^1.4.0",
+    "@condor-labs/mongodb": "^1.1.2",
+    "mongodb": "^4.2.0"
+  },
   "devDependencies": {
     "@babel/core": "~7.15.5",
     "@babel/eslint-parser": "~7.15.4",
@@ -40,14 +48,6 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "dotenv": "^10.0.0",
-    "@condor-labs/logger": "^1.1.0",
-    "@condor-labs/metrics": "^1.4.0",
-    "@condor-labs/mongodb": "^1.1.2",
-    "mongodb": "^4.2.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
