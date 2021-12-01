@@ -1,18 +1,20 @@
 const { hostname } = require('os');
-// const mongoHelper = require('../helpers/mongodb');
+const mongoHelper = require('../helpers/mongodb');
 const logger = require('@condor-labs/logger');
-// const { MONGO_DB_SETTINGS } = require('../utils/constants');
 
 const getStatus = async (_req, res) => {
   try {
-    // mongoHelper.connect().then(async () => {
-    //   const mongo = mongoHelper.clients;
-    //   console.log(mongo)
-    // });
+    let mongo = 'Mongo database service is not running';
+    await mongoHelper.connect().then(async () => {
+      mongo =
+        Object.keys(mongoHelper.clients).length === 0
+          ? 'Mongo database service is not running'
+          : 'Mongo database service is running';
+    });
     return res.send({
       services: {
-        'personal-project-api': `Personal api service is still running`,
-        mongo: 'mongo',
+        'personal-project-api': `Personal api service is running`,
+        'service-mongo': mongo,
       },
       hostname: hostname(),
     });

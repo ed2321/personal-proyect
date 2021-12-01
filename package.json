@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/app.js",
     "test": "jest",
     "dev": "nodemon src/app.js",
     "lint": "eslint .",
@@ -20,7 +21,6 @@
     "@condor-labs/eslint-config": "1.2.0",
     "@condor-labs/matchbox": "1.4.0",
     "@condor-labs/prettier-config": "1.1.0",
-    "dotenv": "^10.0.0",
     "eslint": "7.23.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-config-standard": "~16.0.3",
@@ -28,7 +28,6 @@
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-prettier": "~3.4.1",
     "eslint-plugin-promise": "~5.1.0",
-    "express": "^4.17.1",
     "husky": "7.0.4",
     "jest": "^27.4.2",
     "lint-staged": "10.5.4",
@@ -43,6 +42,8 @@
     ]
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "dotenv": "^10.0.0",
     "@condor-labs/logger": "^1.1.0",
     "@condor-labs/metrics": "^1.4.0",
     "@condor-labs/mongodb": "^1.1.2",
