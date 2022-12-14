@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "dotenv": "^10.0.0",
     "@condor-labs/logger": "^1.1.0",
     "@condor-labs/metrics": "^1.4.0",
